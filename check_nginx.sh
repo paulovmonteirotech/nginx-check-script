@@ -1,9 +1,38 @@
-  GNU nano 4.8                      check_ngnix.sh                       Modified  ONLINE_LOG="/home/paulom/online.log"
-OFFLINE_LOG="/home/paulom/offline.log"
+#!/bin/bash
 
-if system is-active --quiet nginx; then
-        echo "$(date '+%Y-%m-%d %H:%M:%S') - Ngix está online" >> $ONLINE_LOG
-else
-        echo "$(date '+%Y-%m-%d %H:%M:$S') - Ngix está offline" >> $OFFLINE_LOG
+# Habilitar depuração para ver cada comando sendo executado
+set -x
+
+# Diretórios de saída dos logs
+LOG_DIR="/paulom/meu_projeto_nginx"
+ONLINE_LOG="$LOG_DIR/on_and_offline.log"
+OFFLINE_LOG="$LOG_DIR/on_and_offline.log"
+
+# Verifica se os arquivos de log podem ser criados
+echo "Verificando se os arquivos de log podem ser criados..." >> "$LOG_DIR/debug.log"
+
+# Verifica se o diretório de logs existe
+if [ ! -d "$LOG_DIR" ]; then
+    echo "Diretório de logs não existe: $LOG_DIR" >> "$LOG_DIR/debug.log"
+    exit 1
 fi
+
+# Verifica se o serviço Nginx está rodando
+if systemctl is-active --quiet nginx; then
+    STATUS="ONLINE"
+    MESSAGE="Nginx está rodando normalmente."
+    echo "Nginx está ONLINE" >> "$LOG_DIR/debug.log"
+    # Grava no arquivo de log online
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Nginx - $STATUS - $MESSAGE" >> "$ONLINE_LOG"
+else
+    STATUS="OFFLINE"
+    MESSAGE="Nginx está fora do ar."
+    echo "Nginx está OFFLINE" >> "$LOG_DIR/debug.log"
+    # Grava no arquivo de log offline
+    echo "$(date '+%Y-%m-%d %H:%M:%S') - Nginx - $STATUS - $MESSAGE" >> "$OFFLINE_LOG"
+fi
+sudo cp "$ONLINE_LOG" /var/www/html/logs_on_and_offline.txt
+sudo cp "$OFFLINE_LOG" /var/www/html/logs_on_and_offline.txt
+# Desabilitar depuração
+set +x
 
