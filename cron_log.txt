@@ -1,0 +1,140 @@
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=OFFLINE
++ MESSAGE='Nginx está fora do ar.'
++ echo 'Nginx está OFFLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 10:35:01 - Nginx - OFFLINE - Nginx está fora do ar.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=OFFLINE
++ MESSAGE='Nginx está fora do ar.'
++ echo 'Nginx está OFFLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 10:40:01 - Nginx - OFFLINE - Nginx está fora do ar.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 10:45:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 10:50:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 10:55:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 11:00:02 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 11:05:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 11:10:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 11:15:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
++ LOG_DIR=/paulom/meu_projeto_nginx
++ ONLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ OFFLINE_LOG=/paulom/meu_projeto_nginx/on_and_offline.log
++ echo 'Verificando se os arquivos de log podem ser criados...'
++ '[' '!' -d /paulom/meu_projeto_nginx ']'
++ systemctl is-active --quiet nginx
++ STATUS=ONLINE
++ MESSAGE='Nginx está rodando normalmente.'
++ echo 'Nginx está ONLINE'
+++ date '+%Y-%m-%d %H:%M:%S'
++ echo '2024-10-14 11:20:01 - Nginx - ONLINE - Nginx está rodando normalmente.'
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ sudo cp /paulom/meu_projeto_nginx/on_and_offline.log /var/www/html/logs_on_and_offline.txt
++ set +x
