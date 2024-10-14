@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="10"> <!-- Atualiza a página a cada 10 segundos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Status do Servidor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .status {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .status.online {
+            border-left: 5px solid green;
+        }
+        .status.offline {
+            border-left: 5px solid red;
+        }
+        .history {
+            max-height: 400px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Status do Servidor Nginx</h1>
+    <div id="ultima-atualizacao" class="status"></div>
+    
+    <h2>Histórico de Atualizações</h2>
+    <div class="history" id="historico">
+        <!-- O histórico será carregado aqui -->
+    </div>
+
+    <script>
+        // Função para fazer a requisição AJAX e atualizar a página
+        function atualizarStatus() {
+            fetch('logs_on_and_offline.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const linhas = data.trim().split('\n');
+                    const ultimaLinha = linhas[linhas.length - 1];
+                    const historico = linhas.reverse().join('<br>');
+
+                    // Atualizar última atualização
+                    const ultimaAtualizacaoDiv = document.getElementById('ultima-atualizacao');
+                    ultimaAtualizacaoDiv.innerHTML = ultimaLinha;
+                    
+                    if (ultimaLinha.includes('ONLINE')) {
+                        ultimaAtualizacaoDiv.classList.add('online');
+                        ultimaAtualizacaoDiv.classList.remove('offline');
+                    } else {
+                        ultimaAtualizacaoDiv.classList.add('offline');
+                        ultimaAtualizacaoDiv.classList.remove('online');
+                    }
+
+                    // Atualizar histórico completo
+                    document.getElementById('historico').innerHTML = historico;
+                })
+                .catch(error => {
+                    console.error('Erro ao carregar os logs:', error);
+                });
+        }
+
+        // Atualizar a página a cada 10 segundos
+        setInterval(atualizarStatus, 10000);
+        atualizarStatus();
+    </script>
+</body>
+</html>
+
