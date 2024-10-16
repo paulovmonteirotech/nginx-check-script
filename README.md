@@ -1,50 +1,52 @@
 # INSTALAR O UBUNTU VIA WSL
 
-Habilitar o WSL:
+HABILITAR O WSL:
 
-Abra o PowerShell como administrador e execute:
+ABRA O POWER SHELL COMO ADMINISTRADOR E EXECUTE:
 
 wsl --install
 
-Isso instalará o WSL 2 e o Ubuntu como subsistema padrão.
+ISSO INSTALARÁ O WSL 2 E O UBUNTU COMO SUBSISTEMA PADRÃO.
 
-Instalar o Ubuntu 20.04 ou superior:
+INSTALAR O UBUNTU 20.04 OU SUPERIOR:
 
-Se já não estiver instalado, use o seguinte comando para obter a versão desejada:
+SE JÁ NÃO ESTIVER INSTALADO, USE O SEGUINTE COMANDO PARA OBTER A VERSÃO DESEJADA:
 
 wsl --install -d Ubuntu-20.04
 
-Se já tiver o WSL, pode listar distribuições disponíveis:
+SE JÁ TIVER O WSL, PODE LISTAR DISTRIBUIÇÕES DISPONÍVEIS:
 
 wsl -l -o
 
-Após a instalação, abra o Ubuntu, defina o nome de usuário e senha.
+APÓS A INSTALAÇÃO, ABRA O UBUNTU, DEFINA O NOME DE USUÁRIO E SENHA.
+
+Obs.: Para mudar para usuario root de o comando "sudo su" e coloque a senha criada. Caso não queira, todos os comandos de criação, edição e configuração serão necessários o sudo. Além disso, verifique as permições dos arquivos criados.
 
 ---------------------------------------------------------------------------------------------------------------------------
 
 # INSTALAÇÃO DO GIT
 
-Atualize os repositórios:
+ATUALIZE OS REPOSITÓRIOS:
 
 sudo apt update
 
 sudo apt upgrade
 
-Instale o Git:
+INSTALE O GIT:
 
 sudo apt install git
 
-Verifique a instalação:
+VERIFIQUE A INSTALAÇÃO:
 
 git --version
 
-Configuração do Git
+# CONFIGURAÇÃO DO GIT
 
-Configure seu nome de usuário:
+CONFIGURE SEU NOME DE USUÁRIO:
 
 git config --global user.name "Seu Nome"
 
-Configure seu email:
+CONFIGURE SEU EMAIL:
 
 git config --global user.email "seu.email@example.com"
 
@@ -52,15 +54,15 @@ git config --global user.email "seu.email@example.com"
 
 # INSTALAÇÃO DO NGINX
 
-Instale o Nginx:
+INSTALE O NGINX:
 
 sudo apt install nginx
 
-Verifique a instalação:
+VERIFIQUE A INSTALAÇÃO:
 
 sudo systemctl status nginx
 
-Inicie o serviço do Nginx:
+INICIE O SERVIÇO DO NGINX:
 
 sudo systemctl start nginx
 
@@ -133,7 +135,7 @@ EDITE O CRONTAB:
 
 crontab -e
 
-Adicione a seguinte linha para executar o script a cada 5 minutos:
+ADICIONE A SEGUINTE LINHA PARA EXECUTAR O SCRIPT A CADA 5 MINUTOS:
 
 */5 * * * * /caminho/para/check_nginx.sh
 
@@ -141,7 +143,7 @@ Adicione a seguinte linha para executar o script a cada 5 minutos:
 # PARA COPIAR OS ARQUIVOS PARA A MÁQUINA FÍSICA E ATUALIZR UMA PAGINA HTML EM UM SERVIDOR WEB LOCAL, UTILIZE O SEGUINTE SCRIPT:
 SCRIPT POWER SHELL NA MÁQUINA FÍSICA
 
-Crie um script PowerShell como copy_logs.ps1:
+CRIE UM SCRIPT POWER SHELL COMO copy_logs.ps1:
 
 ---------------------------------------------------------------------------------------------------------------------------
 #Caminho do arquivo na máquina virtual (caminho de rede ou mapeado via SMB)
@@ -168,14 +170,17 @@ Copy-Item -Path $sourceFile -Destination $destinationFile -Force
 
 NA MESMA PASTA DO SCRIPT ANTERIOR, CRIE UM ARQUIVO HTML PARA MOSTRAR OS LOGS:
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="10"> <!-- Atualiza a página a cada 10 segundos -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status do Servidor</title>
-    <style>
+---------------------------------------------------------------------------------------------------------------------------
+    <!DOCTYPE html>
+
+    <html lang="pt-br">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="refresh" content="10"> <!-- Atualiza a página a cada 10 segundos -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Status do Servidor</title>
+        <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -203,52 +208,54 @@ NA MESMA PASTA DO SCRIPT ANTERIOR, CRIE UM ARQUIVO HTML PARA MOSTRAR OS LOGS:
             border-radius: 5px;
         }
     </style>
-</head>
-<body>
-    <h1>Status do Servidor Nginx</h1>
-    <div id="ultima-atualizacao" class="status"></div>
+    </head>
+
+    <body>
+
+        <h1>Status do Servidor Nginx</h1>
+
+        <div id="ultima-atualizacao" class="status"></div>
     
-    <h2>Histórico de Atualizações</h2>
-    <div class="history" id="historico">
-        <!-- O histórico será carregado aqui -->
-    </div>
+        <h2>Histórico de Atualizações</h2>
+        <div class="history" id="historico">
+            <!-- O histórico será carregado aqui -->
+        </div>
 
-    <script>
-        // Função para fazer a requisição AJAX e atualizar a página
-        function atualizarStatus() {
-            fetch('logs_on_and_offline.txt')
-                .then(response => response.text())
-                .then(data => {
-                    const linhas = data.trim().split('\n');
-                    const ultimaLinha = linhas[linhas.length - 1];
-                    const historico = linhas.reverse().join('<br>');
+        <script>
+            // Função para fazer a requisição AJAX e atualizar a página
+            function atualizarStatus() {
+                fetch('logs_on_and_offline.txt')
+                    .then(response => response.text())
+                    .then(data => {
+                        const linhas = data.trim().split('\n');
+                        const ultimaLinha = linhas[linhas.length - 1];
+                        const historico = linhas.reverse().join('<br>');
 
-                    // Atualizar última atualização
-                    const ultimaAtualizacaoDiv = document.getElementById('ultima-atualizacao');
-                    ultimaAtualizacaoDiv.innerHTML = ultimaLinha;
+                        // Atualizar última atualização
+                        const ultimaAtualizacaoDiv = document.getElementById('ultima-atualizacao');
+                        ultimaAtualizacaoDiv.innerHTML = ultimaLinha;
                     
-                    if (ultimaLinha.includes('ONLINE')) {
-                        ultimaAtualizacaoDiv.classList.add('online');
-                        ultimaAtualizacaoDiv.classList.remove('offline');
-                    } else {
-                        ultimaAtualizacaoDiv.classList.add('offline');
-                        ultimaAtualizacaoDiv.classList.remove('online');
-                    }
+                        if (ultimaLinha.includes('ONLINE')) {
+                            ultimaAtualizacaoDiv.classList.add('online');
+                            ultimaAtualizacaoDiv.classList.remove('offline');
+                        } else {
+                            ultimaAtualizacaoDiv.classList.add('offline');
+                            ultimaAtualizacaoDiv.classList.remove('online');
+                        }
 
-                    // Atualizar histórico completo
-                    document.getElementById('historico').innerHTML = historico;
-                })
-                .catch(error => {
-                    console.error('Erro ao carregar os logs:', error);
-                });
-        }
+                        // Atualizar histórico completo
+                        document.getElementById('historico').innerHTML = historico;
+                    })
+                    .catch(error => {
+                        console.error('Erro ao carregar os logs:', error);
+                    });
+            }
 
-        // Atualizar a página a cada 10 segundos
-        setInterval(atualizarStatus, 10000);
-        atualizarStatus();
-    </script>
-</body>
-</html>
+            // Atualizar a página a cada 10 segundos
+            setInterval(atualizarStatus, 10000);
+            atualizarStatus();
+        </script>
+    </html>
 
 ---------------------------------------------------------------------------------------------------------------------------------
 # OBS.:
