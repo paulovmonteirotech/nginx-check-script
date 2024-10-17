@@ -76,7 +76,9 @@ Este guia fornece instruções detalhadas para instalar o Ubuntu via WSL (Window
    git config --global user.email "seu.email@example.com"
    ```
  
-> **Nota**: Para mais informações sobre o Git, consulte o tutorial do Diolinux:
+> **Nota**: Esse projeto foi versionado com Git.
+>
+> Para mais informações sobre o Git, consulte o tutorial do Diolinux:
 >
 > [Tutorial do Diolinux](https://diolinux.com.br/tutoriais/instalar-e-usar-git-no-linux-2.html)
 
@@ -155,6 +157,8 @@ set +x
 > **Nota**: Os resultados serão salvos nos arquivos: online.log/ offline.log/ on_and_offline.log/ logs_on_and_offline.txt
 >
 > O arquivo debug.log serve como controle do processo para verificar erros.
+>
+> Verifique se o arquivo tem permissão para ser executado. Para dar permissão execute o comando "chmod +x /caminho/nome_do_arquivo.sh"
 
 ## ⏱️ Configuração do Cron
 
@@ -293,6 +297,7 @@ Crie um arquivo HTML na mesma pasta do script PowerShell para mostrar os logs:
 </body>
 </html>
 ```
+![image](https://github.com/user-attachments/assets/d52a7e37-ee47-416a-a6aa-00ba84e38634)
 
 ## 📝 Observações
 
