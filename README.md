@@ -43,6 +43,10 @@ Este guia fornece instruções detalhadas para instalar o Ubuntu via WSL (Window
 > **Nota**: Para mudar para o usuário root, use o comando `sudo su` e insira a senha criada. Caso não faça isso será necessário usar o sudo para todos os comandos além de verificar as permições dos arquivos(principalmente os executaveis).
 > 
 > Sempre verifique o caminho para seus arquivos.
+>
+> Para mais informações sobre o Windows Subsystem for Linux (WSL), consulte a documentação oficial da Microsoft:
+>
+> [Documentação do WSL](https://docs.microsoft.com/pt-br/windows/wsl/)
 
 ## 🔧 Instalação e Configuração do Git
 
@@ -71,6 +75,10 @@ Este guia fornece instruções detalhadas para instalar o Ubuntu via WSL (Window
    git config --global user.name "Seu Nome"
    git config --global user.email "seu.email@example.com"
    ```
+ 
+> **Nota**: Para mais informações sobre o Git, consulte o tutorial do Diolinux:
+>
+> [Tutorial do Diolinux](https://diolinux.com.br/tutoriais/instalar-e-usar-git-no-linux-2.html)
 
 ## 🌐 Instalação do Nginx
 
@@ -144,6 +152,9 @@ sudo cp "$CONSOLIDATED_LOG" /var/www/html/logs_on_and_offline.txt
 # Desabilitar depuração
 set +x
 ```
+> **Nota**: Os resultados serão salvos nos arquivos: online.log/ offline.log/ on_and_offline.log/ logs_on_and_offline.txt
+>
+> O arquivo debug.log serve como controle do processo para verificar erros.
 
 ## ⏱️ Configuração do Cron
 
@@ -156,8 +167,13 @@ set +x
 2. Adicione a seguinte linha para executar o script a cada 5 minutos:
 
    ```
-   */5 * * * * /caminho/para/check_nginx.sh
+   */5 * * * * /caminho/para/check_nginx.sh >> /seu/caminho/paulom/meu_projeto_nginx/cron_log.txt 2>&1
    ```
+> **Nota**: ">> /seu/caminho/paulom/meu_projeto_nginx/cron_log.txt 2>&1" serve para criar um arquivo de controle chamado cron_log.txt
+>
+>  Para mais informações sobre o Cron, consulte o tutorial da Hostgator:
+>
+> [Tutorial da Hostgator](https://www.hostgator.com.br/blog/cron-job-guia-completo-para-automatizar-tarefas/)
 
 ## 💾 Script PowerShell para Cópia de Logs
 
@@ -193,7 +209,9 @@ Para configurar o script PowerShell para execução automática, você pode usar
 7. Navegue até o local do seu script PowerShell e selecione-o.
 8. Finalize a criação da tarefa.
 
-Para instruções mais detalhadas sobre como usar o Agendador de Tarefas do Windows, consulte o [guia da Dell sobre agendamento de tarefas](https://www.dell.com/support/kbdoc/pt-br/000104417/usando-o-windows-task-scheduler-for-scheduled-raid-array-consistency-checks).
+> **Nota**: Para instruções mais detalhadas sobre como usar o Agendador de Tarefas do Windows, consulte o gui Dell.
+>
+> [Guia da Dell sobre agendamento de tarefas](https://www.dell.com/support/kbdoc/pt-br/000104417/usando-o-windows-task-scheduler-for-scheduled-raid-array-consistency-checks).
 
 ## 🖥️ Página HTML para Exibição de Status
 
@@ -284,9 +302,3 @@ Para rodar o Nginx no Ubuntu via WSL, ele usará a porta 80. Se você estiver ex
 
 🌟 Lembresse de colocar os caminhos corretos para seus arquivos.
 ---
-
-## 📚 Recursos Adicionais
-
-Para mais informações sobre o Windows Subsystem for Linux (WSL), consulte a documentação oficial da Microsoft:
-
-[Documentação do WSL](https://docs.microsoft.com/pt-br/windows/wsl/)
