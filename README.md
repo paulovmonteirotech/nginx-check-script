@@ -9,14 +9,15 @@ Este guia fornece instruções detalhadas para instalar o Ubuntu via WSL (Window
 
 ## 📋 Índice
 
-1. [Instalação do Ubuntu via WSL](#instalação-do-ubuntu-via-wsl)
-2. [Instalação e Configuração do Git](#instalação-e-configuração-do-git)
-3. [Instalação do Nginx](#instalação-do-nginx)
-4. [Script de Verificação do Nginx](#script-de-verificação-do-nginx)
-5. [Configuração do Cron](#configuração-do-cron)
-6. [Script PowerShell para Cópia de Logs](#script-powershell-para-cópia-de-logs)
-7. [Página HTML para Exibição de Status](#página-html-para-exibição-de-status)
-8. [Observações](#observações)
+1. [Instalação do Ubuntu via WSL](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#-instala%C3%A7%C3%A3o-do-ubuntu-via-wsl)
+2. [Instalação e Configuração do Git](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#-instala%C3%A7%C3%A3o-e-configura%C3%A7%C3%A3o-do-git)
+3. [Instalação do Nginx](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#-instala%C3%A7%C3%A3o-do-nginx)
+4. [Script de Verificação do Nginx](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#-script-de-verifica%C3%A7%C3%A3o-do-nginx)
+5. [Configuração do Cron](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#%EF%B8%8F-configura%C3%A7%C3%A3o-do-cron)
+6. [Script PowerShell para Cópia de Logs](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#-script-powershell-para-c%C3%B3pia-de-logs)
+7. [Configuração do Agendador de Tarefas do Windows](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#%EF%B8%8F-configura%C3%A7%C3%A3o-do-agendador-de-tarefas-do-windows)
+8. [Página HTML para Exibição de Status](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#%EF%B8%8F-p%C3%A1gina-html-para-exibi%C3%A7%C3%A3o-de-status)
+9. [Observações](https://github.com/paulovmonteirotech/nginx-check-script?tab=readme-ov-file#-observa%C3%A7%C3%B5es)
 
 ## 🚀 Instalação do Ubuntu via WSL
 
